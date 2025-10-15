@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pet_finder_app/core/helper/app_icon.dart';
 import 'package:pet_finder_app/core/helper/app_images.dart';
+import 'package:pet_finder_app/core/routes/routes.dart';
 import 'package:pet_finder_app/core/theme/app_color.dart';
 import 'package:pet_finder_app/core/theme/app_text_style.dart';
 
@@ -22,7 +23,9 @@ class OnboardingScreen extends StatelessWidget {
             welcomeMessage(),
             SizedBox(height: 60),
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.homeScreen);
+              },
               label: Text('Get Strated', style: AppTextStyle.font18WhiteMedium),
               icon: Image.asset(AppICons.foots),
               style: ElevatedButton.styleFrom(
