@@ -11,9 +11,7 @@ class DetailsScreen extends StatelessWidget {
         children: [
           CustomScrollView(
             slivers: [
-              // buildSliverAppBar(context),
               SliverToBoxAdapter(child: PetDetailsSection()),
-              const SliverToBoxAdapter(child: SizedBox(height: 120)),
             ],
           ),
         ],
@@ -22,12 +20,3 @@ class DetailsScreen extends StatelessWidget {
   }
 }
 
-// Widget buildSliverAppBar(BuildContext context) {
-//   return SliverAppBar(
-//     expandedHeight: 20,
-//     stretch: true,
-//     leading: const CustomBackButton(),
-//     backgroundColor: Colors.transparent,
-//     flexibleSpace: const FlexibleSpaceBar(centerTitle: true),
-//   );
-// }
