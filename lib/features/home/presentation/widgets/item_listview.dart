@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pet_finder_app/core/routes/routes.dart';
 import 'package:pet_finder_app/features/home/presentation/widgets/item_card.dart';
 
 class ItemListview extends StatelessWidget {
@@ -9,7 +10,12 @@ class ItemListview extends StatelessWidget {
     return SliverList.separated(
       itemCount: 7,
       itemBuilder: (BuildContext context, int index) {
-        return ItemCard();
+        return GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, Routes.detailsScreen);
+          },
+          child: ItemCard(),
+        );
       },
       separatorBuilder: (BuildContext context, int index) {
         return SizedBox(height: 10);

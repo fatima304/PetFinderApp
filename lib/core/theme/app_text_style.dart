@@ -30,6 +30,7 @@ class AppTextStyle {
   );
   static TextStyle font14SemiBold = TextStyle(
     fontSize: 14,
+    color: AppColors.black,
     fontWeight: FontWeightHelper.semiBold,
     fontFamily: FontFamilyHelper.poppinsFont,
   );
