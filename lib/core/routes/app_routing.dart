@@ -8,4 +8,5 @@ class AppRouting {
       case Routes.splashScreen:
         return MaterialPageRoute(builder: (_) => SplashScreen());
     }
-
+  }
+}
