@@ -24,7 +24,7 @@ class OnboardingScreen extends StatelessWidget {
             SizedBox(height: 60),
             ElevatedButton.icon(
               onPressed: () {
-                Navigator.pushNamed(context, Routes.homeScreen);
+                Navigator.pushNamed(context, Routes.favScreen);
               },
               label: Text('Get Strated', style: AppTextStyle.font18WhiteMedium),
               icon: Image.asset(AppICons.foots),
