@@ -7,6 +7,7 @@ class ItemListview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverList.separated(
+      itemCount: 7,
       itemBuilder: (BuildContext context, int index) {
         return ItemCard();
       },

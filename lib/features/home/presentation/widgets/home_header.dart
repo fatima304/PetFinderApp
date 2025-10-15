@@ -27,7 +27,6 @@ class _HomeHeaderState extends State<HomeHeader> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(height: 100),
         Text('Find Your Forever Pet', style: AppTextStyle.font24BlackBold),
         const SizedBox(height: 20),
         const SearchTextField(),
