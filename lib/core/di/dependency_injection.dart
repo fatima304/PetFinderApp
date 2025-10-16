@@ -6,7 +6,6 @@ import '../../features/home/data/network/cat_api_service.dart';
 import '../../features/home/data/repository/cat_repository.dart';
 import '../../features/home/data/repository/cat_repository_impl.dart';
 import '../../features/home/presentation/manager/cubit/cat_cubit.dart';
-import '../../features/home/presentation/manager/cubit/search_cubit.dart';
 import '../../features/favourite/presentation/manager/favourite_cubit.dart';
 
 final getIt = GetIt.instance;
@@ -30,9 +29,6 @@ Future<void> setupServiceLocator() async {
   
   // Cat Cubit
   getIt.registerFactory<CatCubit>(() => CatCubit(getIt<CatRepository>()));
-
-  // Search Cubit
-  getIt.registerFactory<SearchCubit>(() => SearchCubit(getIt<CatRepository>()));
 
   // Favourite Cubit 
   getIt.registerLazySingleton<FavouriteCubit>(
