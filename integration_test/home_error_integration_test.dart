@@ -9,7 +9,6 @@ import 'package:pet_finder_app/core/routes/app_routing.dart';
 import 'package:pet_finder_app/core/routes/routes.dart';
 import 'package:pet_finder_app/features/home/data/repository/cat_repository.dart';
 import 'package:pet_finder_app/features/home/presentation/manager/cubit/cat_cubit.dart';
-import 'package:pet_finder_app/pet_finder_app.dart';
 import 'package:pet_finder_app/features/favourite/presentation/manager/favourite_cubit.dart';
 
 class _MockCatRepository extends Mock implements CatRepository {}
