@@ -32,7 +32,7 @@ class _FavScreenState extends State<FavScreen> {
             padding: const EdgeInsets.all(16.0),
             child: CustomScrollView(
               slivers: [
-                const SliverToBoxAdapter(child: SizedBox(height: 20)),
+                const SliverToBoxAdapter(child: SizedBox(height: 30)),
                 SliverToBoxAdapter(
                   child: Text(
                     'Your Favorite Cats',
@@ -41,7 +41,7 @@ class _FavScreenState extends State<FavScreen> {
                 ),
                 const SliverToBoxAdapter(child: SizedBox(height: 20)),
                 if (state is FavouriteSuccess && state.favouriteCats.isEmpty)
-                  const SliverToBoxAdapter(child: Center(child: FavEmptyView()))
+                  const SliverToBoxAdapter(child: FavEmptyView())
                 else if (state is FavouriteSuccess &&
                     state.favouriteCats.isNotEmpty)
                   SliverGrid(

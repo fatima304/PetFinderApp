@@ -33,9 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<CatCubit>(
-          create: (context) => _catCubit,
-        ),
+        BlocProvider<CatCubit>(create: (context) => _catCubit),
         BlocProvider<FavouriteCubit>(
           create: (context) => getIt<FavouriteCubit>()..loadFavourites(),
         ),
@@ -47,9 +45,6 @@ class _HomeScreenState extends State<HomeScreen> {
             slivers: [
               const SliverToBoxAdapter(child: HomeHeader()),
               const SliverToBoxAdapter(child: SizedBox(height: 20)),
-              SliverToBoxAdapter(
-                child: SearchTextField(),
-              ),
               const SliverToBoxAdapter(child: SizedBox(height: 20)),
               const ItemListview(),
             ],

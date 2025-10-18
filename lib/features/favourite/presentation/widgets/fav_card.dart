@@ -87,10 +87,8 @@ class FavCard extends StatelessWidget {
                         getIt<FavouriteCubit>().toggleFavourite(cat);
                       },
                       child: SvgPicture.asset(
-                        AppICons.heart,
-                        color: isFavourite
-                            ? AppColors.mainColor
-                            : AppColors.darkGrey,
+                        isFavourite ? AppICons.fav : AppICons.heart,
+                        color: AppColors.mainColor,
                       ),
                     ),
                   ],
