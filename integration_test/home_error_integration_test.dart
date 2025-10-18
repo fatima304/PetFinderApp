@@ -28,7 +28,7 @@ void main() {
     }
   });
 
-  Widget _buildTestApp() {
+  Widget buildTestApp() {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRouting().generateRoute,
@@ -44,12 +44,10 @@ void main() {
 
     when(() => mockRepo.getCatBreeds()).thenThrow(Exception('network'));
 
-    await tester.pumpWidget(_buildTestApp());
+    await tester.pumpWidget(buildTestApp());
     await tester.pumpAndSettle();
 
     expect(find.textContaining('Error:'), findsOneWidget);
     expect(find.text('Retry'), findsOneWidget);
   });
 }
-
-
