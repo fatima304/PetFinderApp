@@ -51,16 +51,16 @@ class _CatApiService implements CatApiService {
   }
 
   @override
-  Future<List<SearchImageModel>> searchCatImages(String breedId) async {
+  Future<List<SearchImageModel>> searchBreedImage(String breedId) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'breed_ids': breedId};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<List<SearchImageModel>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/images/search?breed_ids=${breedId}&api_key=live_B42K16zdI8W6lbEB7lgM7U8vYriBjV2655jdmG5LiEjoJ83xphe9cPZanpKTZf1Z',
+            '/images/search',
             queryParameters: queryParameters,
             data: _data,
           )

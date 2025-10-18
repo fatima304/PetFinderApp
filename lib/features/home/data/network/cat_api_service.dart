@@ -13,6 +13,9 @@ abstract class CatApiService {
   @GET('${ApiConstants.breedsUrl}?api_key=${ApiConstants.apiKey}')
   Future<List<CatModelNew>> getCatBreeds();
 
-  @GET('/images/search?breed_ids={breedId}&api_key=${ApiConstants.apiKey}')
-  Future<List<SearchImageModel>> searchCatImages(@Path('breedId') String breedId);
+   @GET('/images/search')
+  Future<List<SearchImageModel>> searchBreedImage(
+    @Query('breed_ids') String breedId,
+  );
+
 }

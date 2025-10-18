@@ -5,7 +5,6 @@ import 'package:pet_finder_app/features/favourite/presentation/manager/favourite
 import 'package:pet_finder_app/features/home/presentation/manager/cubit/cat_cubit.dart';
 import 'package:pet_finder_app/features/home/presentation/widgets/home_header.dart';
 import 'package:pet_finder_app/features/home/presentation/widgets/item_listview.dart';
-import 'package:pet_finder_app/features/home/presentation/widgets/search_field.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -33,9 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<CatCubit>(
-          create: (context) => _catCubit,
-        ),
+        BlocProvider<CatCubit>(create: (context) => _catCubit),
         BlocProvider<FavouriteCubit>(
           create: (context) => getIt<FavouriteCubit>()..loadFavourites(),
         ),
@@ -47,9 +44,6 @@ class _HomeScreenState extends State<HomeScreen> {
             slivers: [
               const SliverToBoxAdapter(child: HomeHeader()),
               const SliverToBoxAdapter(child: SizedBox(height: 20)),
-              SliverToBoxAdapter(
-                child: SearchTextField(),
-              ),
               const SliverToBoxAdapter(child: SizedBox(height: 20)),
               const ItemListview(),
             ],

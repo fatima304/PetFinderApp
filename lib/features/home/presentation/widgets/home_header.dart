@@ -29,7 +29,7 @@ class _HomeHeaderState extends State<HomeHeader> {
       children: [
         Text('Find Your Forever Pet', style: AppTextStyle.font24BlackBold),
         const SizedBox(height: 20),
-        const SearchTextField(),
+        const SearchTextField(isClickable: true,),
         const SizedBox(height: 12),
         CustomTabBar(
           tabs: tabs,

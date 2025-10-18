@@ -1,37 +1,53 @@
 import 'package:flutter/material.dart';
-import 'package:pet_finder_app/core/helper/app_icon.dart';
-import 'package:pet_finder_app/core/theme/app_color.dart';
-import 'package:pet_finder_app/core/theme/app_text_style.dart';
+import 'package:pet_finder_app/core/routes/routes.dart';
 
-class SearchTextField extends StatefulWidget {
-  const SearchTextField({super.key});
+class SearchTextField extends StatelessWidget {
+  final TextEditingController? controller;
+  final ValueChanged<String>? onSubmitted;
+  final bool isClickable; 
 
-  @override
-  State<SearchTextField> createState() => _SearchTextFieldState();
-}
-
-class _SearchTextFieldState extends State<SearchTextField> {
+  const SearchTextField({
+    super.key,
+    this.controller,
+    this.onSubmitted,
+    this.isClickable = false,
+  });
 
   @override
   Widget build(BuildContext context) {
+    if (isClickable) {
+      return GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, Routes.searchScreen);
+        },
+        child: AbsorbPointer(
+          child: _buildTextField(context),
+        ),
+      );
+    } else {
+       return _buildTextField(context);
+    }
+  }
+
+  Widget _buildTextField(BuildContext context) {
     return TextField(
+      controller: controller,
+      autofocus: !isClickable,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 16,
           vertical: 10,
         ),
         hintText: 'Search cat breeds...',
-        hintStyle: AppTextStyle.font16DarkGreyRegular,
-        prefixIcon: Image.asset(AppICons.search),
-        
+        prefixIcon: const Icon(Icons.search),
         filled: true,
-        fillColor: AppColors.lightGrey,
+        fillColor: Colors.grey.shade200,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide.none,
         ),
       ),
-    
+      onSubmitted: onSubmitted,
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:pet_finder_app/features/home/presentation/manager/search/search_cubit.dart';
 import '../network/dio_factory.dart';
 import '../../features/home/data/network/cat_api_service.dart';
 import '../../features/home/data/repository/cat_repository.dart';
@@ -29,6 +30,12 @@ Future<void> setupServiceLocator() async {
   
   // Cat Cubit
   getIt.registerFactory<CatCubit>(() => CatCubit(getIt<CatRepository>()));
+
+
+  // Search Cubit ✅
+  getIt.registerFactory<SearchCubit>(
+    () => SearchCubit(getIt<CatRepository>()),
+  );
 
   // Favourite Cubit 
   getIt.registerLazySingleton<FavouriteCubit>(
