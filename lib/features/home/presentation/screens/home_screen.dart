@@ -18,6 +18,18 @@ class _HomeScreenState extends State<HomeScreen> {
   late CatCubit _catCubit;
 
   @override
+  void initState() {
+    super.initState();
+    _catCubit = getIt<CatCubit>()..getCatBreeds();
+  }
+
+  @override
+  void dispose() {
+    _catCubit.close();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
