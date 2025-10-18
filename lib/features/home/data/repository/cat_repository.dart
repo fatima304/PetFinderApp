@@ -1,7 +1,9 @@
+import 'package:pet_finder_app/features/home/data/models/search/search_image_model.dart';
+
 import '../models/cat/cat_model_new.dart';
-import '../models/search/search_image_model.dart';
 
 abstract class CatRepository {
   Future<List<CatModelNew>> getCatBreeds();
-  Future<List<SearchImageModel>> searchCatImages(String breedId);
+    Future<SearchImageModel?> searchBreedByName(String breedName);
+
 }

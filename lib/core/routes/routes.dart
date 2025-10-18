@@ -5,5 +5,5 @@ class Routes {
   static const String homeScreen = "/homeScreen";
   static const String detailsScreen = "/detailsScreen";
   static const String favScreen = "/favScreen";
-  static const String searchResultsScreen = "/searchResultsScreen";
+  static const String searchScreen = "/searchScreen";
 }

@@ -12,6 +12,7 @@ class FavEmptyView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        const SizedBox(height: 50),
         SvgPicture.asset(AppICons.heart, width: 50, height: 50),
         const SizedBox(height: 16),
         Text(
