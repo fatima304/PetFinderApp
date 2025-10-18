@@ -5,7 +5,6 @@ import 'package:pet_finder_app/features/favourite/presentation/manager/favourite
 import 'package:pet_finder_app/features/home/presentation/manager/cubit/cat_cubit.dart';
 import 'package:pet_finder_app/features/home/presentation/widgets/home_header.dart';
 import 'package:pet_finder_app/features/home/presentation/widgets/item_listview.dart';
-import 'package:pet_finder_app/features/home/presentation/widgets/search_field.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

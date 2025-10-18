@@ -1,6 +1,7 @@
 import 'dart:developer';
+import 'package:pet_finder_app/features/home/data/models/search/search_image_model.dart';
+
 import '../models/cat/cat_model_new.dart';
-import '../models/search/search_image_model.dart';
 import '../network/cat_api_service.dart';
 import 'cat_repository.dart';
 
@@ -22,16 +23,23 @@ class CatRepositoryImpl implements CatRepository {
     }
   }
 
-  @override
-  Future<List<SearchImageModel>> searchCatImages(String breedId) async {
+ @override
+  Future<SearchImageModel?> searchBreedByName(String breedName) async {
     try {
-      log('CatRepositoryImpl: Searching images for breed ID: $breedId');
-      final response = await _catApiService.searchCatImages(breedId);
-      log('CatRepositoryImpl: Received ${response.length} search results');
-      return response;
+      final breeds = await _catApiService.getCatBreeds();
+      final breed = breeds.firstWhere(
+        (b) => b.name!.toLowerCase() == breedName.toLowerCase(),
+        orElse: () => CatModelNew(),
+      );
+
+      if (breed.id == null) return null;
+
+      final images = await _catApiService.searchBreedImage(breed.id!);
+      return images.isNotEmpty ? images.first : null;
     } catch (e) {
-      log('CatRepositoryImpl: Error in search API call: $e');
+      log('CatRepositoryImpl: Error searching breed: $e');
       rethrow;
     }
   }
+
 }
