@@ -36,7 +36,7 @@ void main() {
     getIt.registerLazySingleton<FavouriteCubit>(() => FavouriteCubit());
   });
 
-  Widget _buildTestApp() {
+  Widget buildTestApp() {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRouting().generateRoute,
@@ -63,12 +63,12 @@ void main() {
       ];
       when(() => mockRepo.getCatBreeds()).thenAnswer((_) async => sample);
 
-      await tester.pumpWidget(_buildTestApp());
+      await tester.pumpWidget(buildTestApp());
       await tester.pumpAndSettle();
 
-       expect(find.text('Abyssinian'), findsOneWidget);
+      expect(find.text('Abyssinian'), findsOneWidget);
 
-       await tester.tap(find.text('Abyssinian'));
+      await tester.tap(find.text('Abyssinian'));
       await tester.pumpAndSettle();
 
       expect(find.text('Abyssinian'), findsWidgets);
@@ -77,7 +77,7 @@ void main() {
     testWidgets('shows error and retry when repository fails', (tester) async {
       when(() => mockRepo.getCatBreeds()).thenThrow(Exception('network'));
 
-      await tester.pumpWidget(_buildTestApp());
+      await tester.pumpWidget(buildTestApp());
       await tester.pumpAndSettle();
 
       expect(find.textContaining('Error:'), findsOneWidget);
@@ -85,5 +85,3 @@ void main() {
     });
   });
 }
-
-

@@ -20,7 +20,7 @@ void main() {
     getIt.registerLazySingleton<FavouriteCubit>(() => FavouriteCubit());
   });
 
-  Widget _buildTestApp() {
+  Widget buildTestApp() {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRouting().generateRoute,
@@ -29,7 +29,7 @@ void main() {
   }
 
   testWidgets('Favourite screen shows empty state initially', (tester) async {
-    await tester.pumpWidget(_buildTestApp());
+    await tester.pumpWidget(buildTestApp());
     await tester.pumpAndSettle();
 
     expect(find.text('Your Favorite Cats'), findsOneWidget);
@@ -37,7 +37,7 @@ void main() {
   });
 
   testWidgets('Favourite screen can add and remove cats', (tester) async {
-    await tester.pumpWidget(_buildTestApp());
+    await tester.pumpWidget(buildTestApp());
     await tester.pumpAndSettle();
 
      final cat = CatModelNew(

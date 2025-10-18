@@ -20,7 +20,7 @@ void main() {
     getIt.registerLazySingleton<FavouriteCubit>(() => FavouriteCubit());
   });
 
-  Widget _buildTestApp() {
+  Widget buildTestApp() {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRouting().generateRoute,
@@ -49,7 +49,7 @@ void main() {
   }
 
   testWidgets('Details renders and toggles favourite, shows snackbar', (tester) async {
-    await tester.pumpWidget(_buildTestApp());
+    await tester.pumpWidget(buildTestApp());
     await tester.pumpAndSettle();
 
     expect(find.text('Abyssinian'), findsWidgets);
