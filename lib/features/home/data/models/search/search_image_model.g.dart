@@ -8,13 +8,10 @@ part of 'search_image_model.dart';
 
 SearchImageModel _$SearchImageModelFromJson(Map<String, dynamic> json) =>
     SearchImageModel(
-      id: json['id'] as String?,
-      url: json['url'] as String?,
+      id: json['id'] as String,
+      url: json['url'] as String,
       width: (json['width'] as num?)?.toInt(),
       height: (json['height'] as num?)?.toInt(),
-      breeds: json['breeds'] == null
-          ? null
-          : CatModelNew.fromJson(json['breeds'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$SearchImageModelToJson(SearchImageModel instance) =>
@@ -23,5 +20,4 @@ Map<String, dynamic> _$SearchImageModelToJson(SearchImageModel instance) =>
       'url': instance.url,
       'width': instance.width,
       'height': instance.height,
-      'breeds': instance.breeds,
     };
