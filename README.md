@@ -13,15 +13,6 @@ A Flutter application for discovering and managing cat breeds with a beautiful, 
 - **API Integration**: Real-time data from cat breed APIs
 - **Comprehensive Testing**: Unit, widget, and integration tests
 
-## Screenshots 📱
-<img width="300" height="500" alt="splash" src="https://github.com/user-attachments/assets/b122f73a-45a7-4e7b-9f0e-ec31cff44281" />
-<img width="300" height="500" alt="onboarding" src="https://github.com/user-attachments/assets/026eef15-643b-4608-b66d-09f2708a0d41" />
-<img width="300" height="500" alt="home" src="https://github.com/user-attachments/assets/5cd5b543-0aaf-4f24-8e3f-40532ab83dcc" />
-<img width="300" height="500" alt="home_" src="https://github.com/user-attachments/assets/78180ab7-4949-41f1-a195-17444d54c9c4" />
-<img width="300" height="500" alt="fav" src="https://github.com/user-attachments/assets/657fdc90-aba2-40f6-b45b-480573fc6f9c" />
-<img width="300" height="500" alt="details" src="https://github.com/user-attachments/assets/2db1d6e3-a955-446a-9117-55b7070c2f5f" />
-
-
 ## Project Structure 📁
 
 ```
@@ -97,6 +88,10 @@ This project includes comprehensive testing:
 - **Endpoints**: 
   - `/breeds` - Get all cat breeds
 
-
-
-**Happy Coding! 🎉**
+## Screenshots 📱
+<img width="300" height="500" alt="splash" src="https://github.com/user-attachments/assets/b122f73a-45a7-4e7b-9f0e-ec31cff44281" />
+<img width="300" height="500" alt="onboarding" src="https://github.com/user-attachments/assets/026eef15-643b-4608-b66d-09f2708a0d41" />
+<img width="300" height="500" alt="home" src="https://github.com/user-attachments/assets/5cd5b543-0aaf-4f24-8e3f-40532ab83dcc" />
+<img width="300" height="500" alt="home_" src="https://github.com/user-attachments/assets/78180ab7-4949-41f1-a195-17444d54c9c4" />
+<img width="300" height="500" alt="fav" src="https://github.com/user-attachments/assets/657fdc90-aba2-40f6-b45b-480573fc6f9c" />
+<img width="300" height="500" alt="details" src="https://github.com/user-attachments/assets/2db1d6e3-a955-446a-9117-55b7070c2f5f" />
